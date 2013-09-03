@@ -19,7 +19,7 @@ public class EnigmaMachineTest {
 	@Test
 	public void testAddRotor(){
 		EnigmaMachineBuilder builder = new EnigmaMachineBuilder();
-		IRotor rotor = new Rotor();
+		IRotor rotor = new Rotor("", 0);
 		builder.addRotor(rotor);
 		Assert.assertEquals(builder.rotors.size(), 1);
 	}

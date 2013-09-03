@@ -1,43 +1,29 @@
 package nl.topicus.entities;
 
 public class Rotor1 implements IRotor {
+
+	private final IRotor rotor;
 	
-	private String rightSide ="EKMFLGDQVZNTOWYHXUSPAIBRCJ";
+	private final String rightSide = "EKMFLGDQVZNTOWYHXUSPAIBRCJ";	
 	
-	private int position;
-	
-	public Rotor1(int position)
-	{
-		this.position = position;
+	public Rotor1(int position){
+		this.rotor = new Rotor(rightSide, position);
 	}
+	
 	@Override
 	public int getLeftToRight(int index) {
-		return correctIndex(rightSide.indexOf(leftSide.charAt(correctIndex(index + position))) - position);
+		return rotor.getLeftToRight(index);
 	}
 
 	@Override
 	public int getRightToLeft(int index) {
-		return correctIndex(leftSide.indexOf(rightSide.charAt(correctIndex(index + position))) - position);
+		return rotor.getRightToLeft(index);
 	}
 
 	@Override
 	public void rotate() {
-		if(position == rightSide.length()-1){
-			position = 0;
-		} else {
-			position++;
-		}
-	}
-	
-	private int correctIndex(int index)
-	{
-		if(index >= leftSide.length()){
-			return index - leftSide.length();
-		}
-		else if(index < 0){
-			return leftSide.length() + index;
-		}
-		return index;
-	}
+		rotor.rotate();
+		
+	}	
 
 }
