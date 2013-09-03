@@ -6,6 +6,7 @@ import nl.topicus.entities.IRotor;
 import nl.topicus.entities.Rotor;
 import nl.topicus.entities.Rotor1;
 import nl.topicus.entities.Rotor2;
+import nl.topicus.entities.Rotor3;
 
 import org.junit.Test;
 
@@ -90,6 +91,15 @@ public class EnigmaMachineTest {
 		Assert.assertEquals(8, rotor.getRightToLeft(0)); //K
 		Assert.assertEquals(16, rotor.getRightToLeft(5)); //D
 		Assert.assertEquals(14, rotor.getRightToLeft(19)); //A
+	}
+	
+	//ROTOR 3
+	@Test
+	public void testRotor3(){
+		IRotor rotor = new Rotor3(0);
+		Assert.assertEquals(2, rotor.getLeftToRight(5));
+		Assert.assertEquals(11, rotor.getRightToLeft(5));
+
 	}
 	
 }
