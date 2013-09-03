@@ -6,9 +6,9 @@ public abstract class Rotor implements IRotor{
 
 	private int position;	
 	
-	public Rotor(int position)
+	public Rotor(char startPosition)
 	{
-		this.position = position;
+		this.position = leftSide.indexOf(String.valueOf(startPosition).toUpperCase());
 	}
 	
 	@Override

@@ -2,7 +2,7 @@ package nl.topicus.entities;
 
 public class Rotor3 extends Rotor{
 
-	public Rotor3(int position) {
+	public Rotor3(char position) {
 		super(position);
 		// TODO Auto-generated constructor stub
 	}

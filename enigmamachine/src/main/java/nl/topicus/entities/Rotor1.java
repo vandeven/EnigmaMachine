@@ -2,7 +2,7 @@ package nl.topicus.entities;
 
 public class Rotor1 extends Rotor {
 
-	public Rotor1(int position) {
+	public Rotor1(char position) {
 		super(position);
 	}
 
