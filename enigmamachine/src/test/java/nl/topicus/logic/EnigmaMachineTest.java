@@ -29,23 +29,31 @@ public class EnigmaMachineTest {
 		IRotor rotor = new Rotor1(0);
 		Assert.assertEquals(20, rotor.getLeftToRight(0)); //A
 		Assert.assertEquals(22, rotor.getLeftToRight(1)); //B
-		Assert.assertEquals(1, rotor.getLeftToRight(10)); //B
+		Assert.assertEquals(1, rotor.getLeftToRight(10)); //k
 	}
 	
 	@Test
 	public void testRightToLeftRotor1(){
 		IRotor rotor = new Rotor1(0);
-		Assert.assertEquals(4, rotor.getRightToLeft(0)); //E
-		Assert.assertEquals(6, rotor.getRightToLeft(5)); //B
-		Assert.assertEquals(15, rotor.getRightToLeft(19)); //B
+		Assert.assertEquals(4, rotor.getRightToLeft(0)); //
+		Assert.assertEquals(6, rotor.getRightToLeft(5)); //
+		Assert.assertEquals(15, rotor.getRightToLeft(19)); //
 	}
 	
 	@Test
 	public void testLeftToRightRotor1Pos1(){
 		IRotor rotor = new Rotor1(1);
-		Assert.assertEquals(20, rotor.getLeftToRight(0)); //A
-		Assert.assertEquals(22, rotor.getLeftToRight(1)); //B
-		Assert.assertEquals(1, rotor.getLeftToRight(10)); //B
+		Assert.assertEquals(21, rotor.getLeftToRight(0)); //A
+		Assert.assertEquals(23, rotor.getLeftToRight(1)); //B
+		Assert.assertEquals(3, rotor.getLeftToRight(10)); //k
+	}
+	
+	@Test
+	public void testRightToLeftRotor1Pos1(){
+		IRotor rotor = new Rotor1(1);
+		Assert.assertEquals(9, rotor.getRightToLeft(0)); //K
+		Assert.assertEquals(2, rotor.getRightToLeft(5)); //D
+		Assert.assertEquals(25, rotor.getRightToLeft(19)); //A
 	}
 	
 }

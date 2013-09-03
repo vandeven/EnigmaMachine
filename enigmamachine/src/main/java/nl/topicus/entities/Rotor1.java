@@ -12,21 +12,32 @@ public class Rotor1 implements IRotor {
 	}
 	@Override
 	public int getLeftToRight(int index) {
-		return rightSide.indexOf(leftSide.charAt(index));
+		return correctIndex(rightSide.indexOf(leftSide.charAt(correctIndex(index + position))) - position);
 	}
 
 	@Override
 	public int getRightToLeft(int index) {
-		return leftSide.indexOf(rightSide.charAt(index));
+		return correctIndex(leftSide.indexOf(rightSide.charAt(correctIndex(index + position))) - position);
 	}
 
 	@Override
 	public void rotate() {
-		if(position == rightSide.length()){
+		if(position == rightSide.length()-1){
 			position = 0;
 		} else {
-		position++;
+			position++;
 		}
+	}
+	
+	private int correctIndex(int index)
+	{
+		if(index >= leftSide.length()){
+			return index - leftSide.length();
+		}
+		else if(index < 0){
+			return leftSide.length() + index;
+		}
+		return index;
 	}
 
 }
